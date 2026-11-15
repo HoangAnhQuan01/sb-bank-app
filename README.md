@@ -13,3 +13,7 @@
 cd backend
 npm install
 npm run dev
+
+### 2. Khởi chạy Frontend
+```bash
+npm run dev
