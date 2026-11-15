@@ -292,6 +292,9 @@ exports.getTransactionById = async (req, res) => {
 // [API 13] GET /api/accounts/admin/users - Lấy danh sách người dùng và số dư
 exports.getAllUsersAdmin = async (req, res) => {
   try {
+    if (req.user.role !== 'admin') {
+      return res.status(403).json({ message: 'Chỉ Quản trị viên (Admin) mới có quyền truy cập!' });
+    }
     const accounts = await Account.find()
       .populate('user_id', 'full_name email role status createdAt')
       .sort({ createdAt: -1 });
@@ -305,6 +308,9 @@ exports.getAllUsersAdmin = async (req, res) => {
 // [API 14] PATCH /api/accounts/admin/users/:id/status - Khóa hoặc mở khóa tài khoản
 exports.updateUserStatusAdmin = async (req, res) => {
   try {
+    if (req.user.role !== 'admin') {
+      return res.status(403).json({ message: 'Chỉ Quản trị viên (Admin) mới có quyền thực hiện!' });
+    }
     const { status } = req.body;
     if (!['active', 'locked'].includes(status)) {
       return res.status(400).json({ message: 'Trạng thái không hợp lệ (active hoặc locked)!' });
@@ -333,6 +339,9 @@ exports.updateUserStatusAdmin = async (req, res) => {
 // [API 15] DELETE /api/accounts/admin/transactions/:id - Xóa bản ghi nhật ký giao dịch
 exports.deleteTransactionAdmin = async (req, res) => {
   try {
+    if (req.user.role !== 'admin') {
+      return res.status(403).json({ message: 'Chỉ Quản trị viên (Admin) mới có quyền xóa!' });
+    }
     const deletedTx = await Transaction.findByIdAndDelete(req.params.id);
     if (!deletedTx) {
       return res.status(404).json({ message: 'Không tìm thấy giao dịch cần xóa!' });
