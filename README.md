@@ -1,4 +1,4 @@
-# Simple Banking App
+# SB Bank App
 
 Ứng dụng ngân hàng trực tuyến cơ bản hỗ trợ đăng ký, đăng nhập (JWT), xem số dư, chuyển tiền nội bộ và tra cứu lịch sử giao dịch.
 
