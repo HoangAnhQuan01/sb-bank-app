@@ -13,7 +13,15 @@
 cd backend
 npm install
 npm run dev
+```
 
 ### 2. Khởi chạy Frontend
 ```bash
+cd frontkend
 npm run dev
+```
+
+### 3. Truy cập địa chỉ
+```bash
+http://localhost:5173/
+```
