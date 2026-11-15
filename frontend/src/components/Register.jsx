@@ -35,7 +35,7 @@ function Register({ onSwitchToLogin }) {
 
   return (
     <div style={{ maxWidth: 360, margin: '50px auto', padding: 20, border: '1px solid #ddd', borderRadius: 8 }}>
-      <h2 style={{ textAlign: 'center' }}>Đăng ký Tài khoản</h2>
+      <h2 style={{ textAlign: 'center' }}>Mở tài khoản SB Bank</h2>
       {msg && (
         <p style={{ color: msg.type === 'success' ? 'green' : 'red', fontSize: 14 }}>
           {msg.text}

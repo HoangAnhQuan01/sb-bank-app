@@ -39,7 +39,7 @@ function Login({ onLoginSuccess, onSwitchToRegister }) {
 
   return (
     <div style={{ maxWidth: 360, margin: '50px auto', padding: 20, border: '1px solid #ddd', borderRadius: 8 }}>
-      <h2 style={{ textAlign: 'center' }}>Đăng nhập Banking</h2>
+      <h2 style={{ textAlign: 'center' }}>Đăng nhập SB Bank</h2>
       {error && <p style={{ color: 'red', fontSize: 14 }}>{error}</p>}
       
       <form onSubmit={handleSubmit}>

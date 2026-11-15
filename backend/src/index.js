@@ -19,7 +19,7 @@ connectDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/accounts', accountRoutes);
 app.get('/', (req, res) => {
-  res.send('Main Page, nothing here');
+  res.send('SB Bank API Server is running!');
 });
 
 const PORT = process.env.PORT || 5000;
